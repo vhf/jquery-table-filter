@@ -1,4 +1,4 @@
-##jquery-table-filter.js
+##jquery.table_filter.js
 
 __Table Filter (for jQuery)__   
 version: 0.1.0 (Oct. 18, 2012)   
@@ -24,7 +24,10 @@ Copyright 2012 Efe Amadasun [ efeamadasun@gmail.com ]
 		});
 	});
 
-####ADDITIONAL SETTINGS:
+####SETTINGS:
+
+__table (CSS DOM selector) - No default__
++	*Table with the rows you want to filter. This setting has no default value, and is required.*
 
 __filter_inverse (boolean) - default: False__
 +	*__True__ - filters out rows that match the filter text*
