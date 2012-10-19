@@ -1,0 +1,5 @@
+= jquery.table_filter.js CHANGELOG
+
+== Version 0.1.0 (October 18, 2012)
+
+* Initial release

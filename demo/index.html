@@ -1,0 +1,43 @@
+
+<script type="text/javascript" src="jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="jquery.table_filter.js"></script>
+<script type="text/javascript">
+$(function(){ 
+	$(".f_txt").table_filter({'table':'.f_tbl'});
+});
+</script>
+
+<style type="text/css">
+body{ font-family: arial; }
+table{ margin:20px 0 20px 0; }
+table td{ padding:5px; }
+</style>
+
+<div>
+
+<input type="text" class="f_txt"/>
+
+<table class="f_tbl">
+
+<tr>
+	<th>First name</th>
+	<th>Last name</th>
+</tr>
+
+<tr>
+	<td>Efe michael</td>
+	<td>Amadasun</td>
+</tr>
+
+<tr>
+	<td>Charles</td>
+	<td>Agbro</td>
+</tr>
+
+<tr>
+	<td>Dami</td>
+	<td>Fowora</td>
+</tr>
+
+</table>
+</div>
