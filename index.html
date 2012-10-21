@@ -7,7 +7,14 @@
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="javascripts/scale.fix.js"></script>
+    <script type="text/javascript" src="javascripts/jquery-1.8.1.min.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.table_filter.js"></script>
+	<script type="text/javascript" src="javascripts/scale.fix.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$(".f_txt").table_filter({'table':'.f_tbl'});
+	});
+	</script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -86,7 +93,44 @@ This plugin depends on the jQuery library, so you should have that as well.</p>
 <ul>
 <li>  <code>True</code> - it uses space in filter text as delimiters. e.g. if filter text = "good boy", it will search rows for "good" and "boy" seperately</li>
 <li>  <code>False</code> - it will not use space as a delimiter. e.g. "good boy" will be treated as one word.</li>
-</ul><h4>License</h4>
+</ul>
+
+<h4>Demo</h4>
+
+<p>
+<input type="text" class="f_txt" style="width:100%"/>
+
+<table class="f_tbl">
+
+<tr>
+	<th>First name</th>
+	<th>Last name</th>
+</tr>
+
+<tr>
+	<td>Efe michael</td>
+	<td>Amadasun</td>
+</tr>
+
+<tr>
+	<td>Charles</td>
+	<td>Agbro</td>
+</tr>
+
+<tr>
+	<td>Good boy</td>
+	<td>Jones</td>
+</tr>
+
+<tr>
+	<td>Dami</td>
+	<td>Fowora</td>
+</tr>
+
+</table>
+</p>
+
+<h4>License</h4>
 
 <p>Licensed under the MIT: <a href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a><br>
 Copyright (c) 2012 by <a>Efe Amadasun</a></p>
