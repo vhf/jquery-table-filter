@@ -6,6 +6,14 @@ This is a jQuery plugin that uses input from a textbox to filter rows in HTML ta
 lightweight (the minified version is just 872 bytes).
 
 ####Usage:
+Include `jquery.table_filter.js` or `jquery.table_filter.min.js` in your HTML file. 
+This plugin depends on the jQuery library, so you should have that as well.
+```html
+	<!-- Jquery library called before "jquery.table_filter.js" -->
+	<script type="text/javascript" src="jquery.table_filter.js"></script>
+```
+
+You can then call the plugin using the CSS Selector for your Table and Text input. 
 ```html
 	<input type="text" class="f_txt"/>
 	<table class="f_tbl">...</table>
