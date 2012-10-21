@@ -37,14 +37,14 @@ You can then call the plugin using the CSS Selector for your Table and Text inpu
 ```
 
 ####Settings:
-__table (CSS DOM selector) - No default__
+`table` (CSS DOM selector) - No default
 +	Table with the rows you want to filter. This setting has no default value, and is required.
 
-__filter_inverse (boolean) - default: False__
+`filter_inverse` (boolean) - default: False
 +	__True__ - filters out rows that match the filter text
 +	__False__ - filters out rows that do not match the filter text
 
-__enable_space (boolean) - default: False__
+`enable_space` (boolean) - default: False
 +	__True__ - it uses space in filter text as delimiters. e.g. if filter text = "good boy", it will search rows for "good" and "boy" seperately
 +	__False__ - it will not use space as a delimiter. e.g. "good boy" will be treated as one word.
 
