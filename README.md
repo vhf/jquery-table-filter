@@ -7,14 +7,18 @@ http://www.opensource.org/licenses/mit-license.php
 Copyright 2012 Efe Amadasun [ efeamadasun@gmail.com ]   
 
 ####USAGE:
+```html
 	<input type="text" class="f_txt"/>
 	<table class="f_tbl">...</table>
+```
 
+```javascript
 	//basic initialisation
 	$(function(){ 
 	  	$(".f_txt").table_filter({'table':'.f_tbl'});
 	});
-	
+```
+```javascript
 	//full initialisation
 	$(function(){ 
 	  	$(".f_txt").table_filter({
@@ -23,6 +27,7 @@ Copyright 2012 Efe Amadasun [ efeamadasun@gmail.com ]
 			'enable_space':false
 		});
 	});
+```
 
 ####SETTINGS:
 
