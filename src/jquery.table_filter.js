@@ -8,11 +8,11 @@
  * Copyright 2012 Efe Amadasun [ efeamadasun@gmail.com ]
  *
  * USAGE:
- * 
+ *
  * <input type="text" class="f_txt"/>
  * <table class="f_tbl">...</table>
- * 
- * $(function(){ 
+ *
+ * $(function(){
  * 	  $(".f_txt").table_filter({'table':'.f_tbl'});
  * });
  *
@@ -23,7 +23,7 @@
  * False - filters out rows that do not match the filter text
  *
  * enable_space (boolean) - default: False
- * True - it uses space in filter text as delimiters. e.g. if filter text = "good boy", it 
+ * True - it uses space in filter text as delimiters. e.g. if filter text = "good boy", it
  *        will search rows for "good" and "boy" seperately
  * False - it will not use space as a delimiter. e.g. "good boy" will be treated as one word.
  *
@@ -35,22 +35,23 @@
 
 		//set default plugin values
 		var settings = $.extend({
-			
+
 			'filter_inverse': false,
 			'enable_space': false,
-			'table': ''
+			'filterfield': ''
 
 		}, options);
 
 		//return element, to maintain chainability
 		return this.each(function () {
+			var $filterfield = $(settings.filterfield);
 			var $this = $(this);
 
-			$this.bind("keyup", function () { 
+			$filterfield.bind("keyup", function () {
 
 				//set filter text, and filterable table rows
-				var txt = $this.val().toLowerCase();
-				var obj = $(settings.table).find("tr:not(:has('th'))");
+				var txt = $filterfield.val().toLowerCase();
+				var obj = $this.find("tr:not(:has('th'))");
 
 				$.each(obj, function () {
 					//default visibilty for rows is set based on filter_inverse value
@@ -59,8 +60,8 @@
 
 					$.each(inner_obj, function () {
 						var td_txt = $.trim($(this).text()).toLowerCase();
-						
-						//if space is enabled as a delimiter, split the TD text value 
+
+						//if space is enabled as a delimiter, split the TD text value
 						//and check the individual values against the filter text.
 						if(settings.enable_space){
 
@@ -95,7 +96,7 @@
 
 				//display all rows if filter text is empty
 				if($.trim(txt) == ""){
-					$(settings.table).find("tr").show();
+					$this.find("tr").show();
 				}
 
 			});
