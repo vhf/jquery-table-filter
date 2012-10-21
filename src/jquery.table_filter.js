@@ -13,7 +13,7 @@
  * <table class="f_tbl">...</table>
  *
  * $(function(){
- * 	  $(".f_txt").table_filter({'table':'.f_tbl'});
+ * 	  $(".f_tbl").table_filter({'filterfield':'.f_txt'});
  * });
  *
  * ADDITIONAL SETTINGS:
