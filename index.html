@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Jquery-table-filter by efeamadasun</title>
+    <title>Jquery Table Filter by efeamadasun</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
@@ -16,8 +16,8 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1 class="header">Jquery-table-filter</h1>
-        <p class="header">jquery plugin to filter HTML table rows</p>
+        <h1 class="header">Jquery Table Filter</h1>
+        <p class="header">jQuery plugin to filter HTML table rows</p>
 
         <ul>
           <li class="download"><a class="buttons" href="https://github.com/efeamadasun/jquery-table-filter/zipball/master">Download ZIP</a></li>
@@ -32,53 +32,64 @@
       <section>
         <h2>jquery.table_filter.js</h2>
 
-<p><strong>Table Filter (for jQuery)</strong><br>
-version: 0.1.0 (Oct. 18, 2012)<br>
-Licensed under the MIT:<br><a href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a><br>
-Copyright 2012 Efe Amadasun [ <a href="mailto:efeamadasun@gmail.com">efeamadasun@gmail.com</a> ]   </p>
+<p>version: 0.1.0 (Oct. 18, 2012)   </p>
 
-<h4>USAGE:</h4>
+<h4>What's this?</h4>
 
-<pre><code>&lt;input type="text" class="f_txt"/&gt;
-&lt;table class="f_tbl"&gt;...&lt;/table&gt;
+<p>This is a jQuery plugin that uses input from a textbox to filter rows in HTML tables. its fast and 
+lightweight (the minified version is just 872 bytes).</p>
 
-//basic initialisation
-$(function(){ 
-    $(".f_txt").table_filter({'table':'.f_tbl'});
-});
+<h4>Usage:</h4>
 
-//full initialisation
-$(function(){ 
-    $(".f_txt").table_filter({
-        'table':'.f_tbl',
-        'filter_inverse':false,
-        'enable_space':false
-    });
-});
-</code></pre>
+<p>Include <code>jquery.table_filter.js</code> or <code>jquery.table_filter.min.js</code> in your HTML file. 
+This plugin depends on the jQuery library, so you should have that as well.</p>
 
-<h4>SETTINGS:</h4>
+<div class="highlight"><pre>    <span class="c">&lt;!-- Jquery library called before "jquery.table_filter.js" --&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"jquery.table_filter.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
 
-<p><strong>table (CSS DOM selector) - No default</strong></p>
+<p>You can then call the plugin using the CSS Selector for your Table and Text input. </p>
+
+<div class="highlight"><pre>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"f_txt"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"f_tbl"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/table&gt;</span>
+</pre></div>
+
+<div class="highlight"><pre>    <span class="c1">//basic initialisation</span>
+    <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span> 
+        <span class="nx">$</span><span class="p">(</span><span class="s2">".f_txt"</span><span class="p">).</span><span class="nx">table_filter</span><span class="p">({</span><span class="s1">'table'</span><span class="o">:</span><span class="s1">'.f_tbl'</span><span class="p">});</span>
+    <span class="p">});</span>
+</pre></div>
+
+<div class="highlight"><pre>    <span class="c1">//full initialisation</span>
+    <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span> 
+        <span class="nx">$</span><span class="p">(</span><span class="s2">".f_txt"</span><span class="p">).</span><span class="nx">table_filter</span><span class="p">({</span>
+            <span class="s1">'table'</span><span class="o">:</span><span class="s1">'.f_tbl'</span><span class="p">,</span>
+            <span class="s1">'filter_inverse'</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span>
+            <span class="s1">'enable_space'</span><span class="o">:</span><span class="kc">false</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+</pre></div>
+
+<h4>Settings:</h4>
+
+<p><code>table</code> (CSS DOM selector) - No default</p>
 
 <ul>
-<li>  <em>Table with the rows you want to filter. This setting has no default value, and is required.</em>
-</li>
-</ul><p><strong>filter_inverse (boolean) - default: False</strong></p>
+<li>  Table with the rows you want to filter. This setting has no default value, and is required.</li>
+</ul><p><code>filter_inverse</code> (boolean) - default: False</p>
 
 <ul>
-<li>  <em><strong>True</strong> - filters out rows that match the filter text</em>
-</li>
-<li>  <em><strong>False</strong> - filters out rows that do not match the filter text</em>
-</li>
-</ul><p><strong>enable_space (boolean) - default: False</strong></p>
+<li>  <code>True</code> - filters out rows that match the filter text</li>
+<li>  <code>False</code> - filters out rows that do not match the filter text</li>
+</ul><p><code>enable_space</code> (boolean) - default: False</p>
 
 <ul>
-<li>  <em><strong>True</strong> - it uses space in filter text as delimiters. e.g. if filter text = "good boy", it will search rows for "good" and "boy" seperately</em>
-</li>
-<li>  <em><strong>False</strong> - it will not use space as a delimiter. e.g. "good boy" will be treated as one word.</em>
-</li>
-</ul>
+<li>  <code>True</code> - it uses space in filter text as delimiters. e.g. if filter text = "good boy", it will search rows for "good" and "boy" seperately</li>
+<li>  <code>False</code> - it will not use space as a delimiter. e.g. "good boy" will be treated as one word.</li>
+</ul><h4>License</h4>
+
+<p>Licensed under the MIT: <a href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a><br>
+Copyright (c) 2012 by <a>Efe Amadasun</a></p>
       </section>
       <footer>
         <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
